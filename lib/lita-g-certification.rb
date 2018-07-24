@@ -1,0 +1,1 @@
+require "lita/handlers/g_certification"
