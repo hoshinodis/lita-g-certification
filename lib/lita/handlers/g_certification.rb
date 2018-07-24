@@ -21,9 +21,9 @@ module Lita
         else
           ans_html = Nokogiri::HTML(open(urls.first))
           ans = ans_html.css('.entry-content')
-          response.reply("```\n#{ans.css('p').first.text}\n\n#{ans.css("p")[1].to_s.gsub("<br>", "\n").gsub("<p>", "").gsub("</p>", "").gsub('"', "").gsub("<span style=color: #ff0000;>", "").gsub("</span>", "").gsub("<strong>", "").gsub("</strong>", "")
-          }\n#{ans.css("p")[2].to_s.gsub("<br>", "\n").gsub("<p>", "").gsub("</p>", "").gsub('"', "").gsub("<span style=color: #ff0000;>", "").gsub("</span>", "").gsub("<strong>", "").gsub("</strong>", "")
-          }```")
+          response.reply("#{ans.css('p').first.text}\n\n#{ans.css("p")[1].to_s.gsub("<br>", "\n").gsub("<p>", "").gsub("</p>", "").gsub('"', "").gsub("<span style=color: #ff0000;>", "").gsub("</span>", "").gsub("<strong>", "*").gsub("</strong>", "*")
+          }\n#{ans.css("p")[2].to_s.gsub("<br>", "\n").gsub("<p>", "").gsub("</p>", "").gsub('"', "").gsub("<span style=color: #ff0000;>", "").gsub("</span>", "").gsub("<strong>", "*").gsub("</strong>", "*")
+          }")
         end
 
       rescue OpenURI::HTTPError => e
